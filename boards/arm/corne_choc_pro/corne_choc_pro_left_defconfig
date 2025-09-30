@@ -47,3 +47,6 @@ CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n
 
 # Enable ZMK Studio (alpha)
 CONFIG_ZMK_STUDIO=y
+
+# Disable ZMK Studio locking
+CONFIG_ZMK_STUDIO_LOCKING=n
