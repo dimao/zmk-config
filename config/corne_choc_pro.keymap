@@ -23,6 +23,16 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_ctrl+alt+shift+j {
+            bindings = <&kt LC(LS(LA(DOWN)))>;
+            key-positions = <23 28 45 39>;
+            layers = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
