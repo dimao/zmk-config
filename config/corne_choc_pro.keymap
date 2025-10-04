@@ -31,15 +31,56 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
 
-        alt_layer: alt_layer {
+        alt_word_nav: alt_word_nav {
             compatible = "zmk,behavior-hold-tap";
-            label = "ALT_LAYER";
+            label = "ALT_WORD_NAV";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             flavor = "balanced";
-            bindings = <&mo>, <&kp>;
+            bindings = <&kp>, <&mo>;
         };
+
+        alt_left: alt_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALT_LEFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
+        alt_down: alt_down {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALT_DOWN";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
+        alt_up: alt_up {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALT_UP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
+        alt_right: alt_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALT_RIGHT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
     };
 
     keymap {
@@ -58,7 +99,7 @@
 &kp ESCAPE  &kp Q  &kp W  &kp E               &kp R  &kp T      &none  &none  &kp Y    &kp U  &kp I           &kp O    &kp P     &kp BSPC
 &kp TAB     &kp A  &kp S  &kp D               &kp F  &kp G      &none  &none  &kp H    &kp J  &kp K           &kp L    &kp SEMI  &kp SQT
 &caps       &kp Z  &kp X  &kp C               &kp V  &kp B                    &kp N    &kp M  &kp COMMA       &kp DOT  &kp FSLH  &kp RCTRL
-                          &mt LGUI LG(SPACE)  &sl 1  &kp SPACE                &kp RET  &mo 2  &alt_layer 1 LEFT_ALT
+                          &mt LGUI LG(SPACE)  &sl 1  &kp SPACE                &kp RET  &mo 2  &alt_word_nav LEFT_ALT 1
             >;
         };
 
@@ -73,9 +114,9 @@
 
             bindings = <
 &kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5                             &none  &none  &kp N6    &kp N7    &kp N8  &kp N9     &kp N0    &kp BSPC
-&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &none  &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp HOME  &kp PRIOR
+&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &none  &none  &alt_left LEFT_ALT LEFT  &alt_down LEFT_ALT DOWN  &alt_up LEFT_ALT UP  &alt_right LEFT_ALT RIGHT  &kp HOME  &kp PRIOR
 &kp LSHFT  &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &rgb_ug RGB_COLOR_HSB(188,100,81)                &trans    &trans    &trans  &trans     &kp END   &kp K_NEXT
-                                          &kp LGUI      &trans        &kp SPACE                                        &kp LGUI  &trans    &alt_layer 1 LEFT_ALT
+                                          &kp LGUI      &trans        &kp SPACE                                        &kp LGUI  &trans    &alt_word_nav LEFT_ALT 1
             >;
         };
 
