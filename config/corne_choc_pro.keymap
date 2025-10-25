@@ -20,6 +20,119 @@
             label = "CAPS";
             #binding-cells = <0>;
             bindings = <&kp LSHFT>, <&caps_word>;
+
+            tapping-term-ms = <400>;
+        };
+
+        // Home row mode behaviors for numbers
+
+        hr_1: hr_1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_1";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_2: hr_2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_2";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_3: hr_3 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_3";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_4: hr_4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_4";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_5: hr_5 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_5";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_6: hr_6 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_6";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_7: hr_7 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_7";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_8: hr_8 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_8";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_9: hr_9 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_9";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hr_0: hr_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR_0";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        rgb_tap: rgb_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RGB_TAP";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_TOG>, <&rgb_ug RGB_COLOR_HSB(0,0,20)>;
+
+            tapping-term-ms = <400>;
         };
     };
 
@@ -69,10 +182,10 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2           &kp N3        &kp N4       &kp N5     &none  &none  &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp DEL
-&kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &kp END      &none      &none  &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none   &none
-&trans     &none         &rgb_ug RGB_TOG  &sys_reset    &bootloader  &kp HOME                 &trans    &trans    &trans  &trans     &none   &kp RIGHT_SHIFT
-                                          &kp LGUI      &trans       &kp SPACE                &kp LGUI  &trans    &trans
+&trans  &hr_1 EXCL N1  &hr_2 AT N2   &hr_3 HASH N3  &hr_4 DLLR N4  &hr_5 PRCNT N5  &none  &none  &hr_6 CARET N6  &hr_7 AMPS N7  &hr_8 ASTRK N8  &hr_9 LPAR N9     &hr_0 RPAR N0      &kp DEL
+&trans  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2   &none          &none           &none  &none  &kp MINUS       &kp EQUAL      &kp PIPE        &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp HOME
+&trans  &none          &rgb_tap      &sys_reset     &bootloader    &none                         &kp UNDER       &kp PLUS       &kp BACKSLASH   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp END
+                                     &kp LGUI       &trans         &kp SPACE                     &kp LA(ENTER)   &trans         &trans
             >;
         };
 
@@ -86,10 +199,10 @@
             //                    | GUI |     | SPC |               | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &none  &none  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans     &none  &none  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE                &kp RET    &trans     &kp RALT
+&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &none  &none  &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp DEL
+&trans     &trans    &trans  &trans    &trans    &trans     &none  &none  &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &kp BSLH  &kp GRAVE
+&trans     &trans    &trans  &trans    &trans    &trans                   &kp UNDER  &kp PLUS  &kp LBRC   &kp RBRC   &kp PIPE  &kp LEFT_SHIFT
+                             &kp LGUI  &trans    &kp SPACE                &kp RET    &trans    &kp RALT
             >;
         };
 
